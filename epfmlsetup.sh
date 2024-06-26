@@ -42,4 +42,16 @@ runai list projects
 #Set the default project
 runai config project mlo-$GASPAR_USERNAME
 
-
+# We need to delete the job first if this command has run before, two jobs can't have the same name
+# Try to submit a job that mounts our shared storage and see its content.
+runai submit \
+     --name setup-test-storage \
+     --image ubuntu \
+     --pvc runai-mlo-$GASPAR_USERNAME-scratch:/mloscratch \
+     -- ls -la /mloscratch/homes
+# Check the status of the job
+runai describe job setup-test-storage
+# Check its logs to see that it ran.
+runai logs setup-test-storage
+# Delete the successful jobs
+runai delete jobs setup-test-storage

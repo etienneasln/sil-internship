@@ -7,13 +7,15 @@ cd /mnt/c/Users/assel
 pwd
 
 #Download kubectl, give right permissions and move it
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+#We put version v1.27.0 because server kubectl version is v1.26.0 and we want the difference in 
+#version to be 1 or less
+curl -LO "https://dl.k8s.io/release/v1.27.0/bin/linux/amd64/kubectl"
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 sudo chown root: /usr/local/bin/kubectl
 
 #Download runai CLI, give right permissions and move it
-wget --content-disposition https://rcp-caas-prod.rcp.epfl.ch/cli/linux
+wget --content-disposition https://rcp-caas-test.rcp.epfl.ch/cli/linux
 chmod +x ./runai
 sudo mv ./runai /usr/local/bin/runai
 sudo chown root: /usr/local/bin/runai

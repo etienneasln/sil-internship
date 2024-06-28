@@ -1,0 +1,4 @@
+In the NVIDIA research paper, they mention retrieval. I've seen that retrieval consists of using an external database that the model can call upon 
+in case it can't respond adequately to a prompt (retrieval augmented generation). From what I understand this implies that this data isn't originally part of the context.
+The word retrieval is also mentioned in the landmark token paper, but from what I understood of the paper, this doesn't reference RAG, but rather retrieval of information
+from the context. Am I right in assuming this, and also that the NVIDIA paper refers to this as well? 

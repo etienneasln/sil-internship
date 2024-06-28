@@ -2,10 +2,6 @@
 
 #Needs to be executed with WSL, and be given executable permission
 
-#Change directories to home directory
-cd /mnt/c/Users/assel
-pwd
-
 #Download kubectl, give right permissions and move it
 #We put version v1.27.0 because server kubectl version is v1.26.0 and we want the difference in 
 #version to be 1 or less
@@ -55,3 +51,4 @@ runai describe job setup-test-storage
 runai logs setup-test-storage
 # Delete the successful jobs
 runai delete jobs setup-test-storage
+
